@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{f}}
+        {{f | fixed}}
+        <hr>
+        {{obj.age}}
+        <hr>
+       <span v-text='obj.name'></span>
+       <hr>
+       {{title}}
+        <p v-html='title'></p>
+        <hr>
+        <img :src='yoursrc'></p>
+        <button @click='fun'>按钮</button>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                f:3.122232324,
+                obj:{
+                    age:30,
+                    name:'faker'
+                },
+                title:'<h1>hahaha</h1>',
+                yoursrc:'1.jpg'
+            },
+            filters:{
+                fixed:function (d){
+                    return  d.toFixed(2)
+                }
+            },
+            methods:{
+               fun:function(){
+                   console.log('按钮被点击了')
+               }
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+    <hr>
+        {{6<5 ? msg:a}}
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el:'#app',
+            data:{
+                a:'我们',
+                msg:23
+            },
+            created:function(){
+                alert('我是Vue实列，创建完成，还未挂载到DOM')
+            },
+            mounted:function(){
+                alert('我是Vue实列，已经挂载到DOM')
+            }
+        })
+        console.log(app.$data)
+        console.log(app)
+        console.log(app.msg)
+    </script>
+</body>
+</html>
